@@ -42,8 +42,7 @@
 
 > 主程式介面（YouTube 下載器 GUI）：
 
-![screenshot](YT_downloader/screenshot.png)
-
+![screenshot](screenshot.png)
 
 
 📄 License

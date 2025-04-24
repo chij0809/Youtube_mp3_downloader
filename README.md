@@ -37,7 +37,7 @@ When the user selects MP4 format, the system will automatically check whether `f
 
 ## 📦 Built With
 
-- Python 3.x
+- Python 3.11
 - Tkinter GUI
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - `subprocess` to call yt-dlp

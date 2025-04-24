@@ -4,6 +4,33 @@
 支援 MP3 音訊與 MP4 影片下載，可選擇解析度與儲存路徑，簡單直覺，適合自用與教學示範。
 
 ---
+## ⚙️ 前置需求
+
+本程式需要使用 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 與 [ffmpeg](https://ffmpeg.org/) 來下載與轉檔影音。
+
+### 📦 如何安裝 ffmpeg（Windows 使用者）
+
+請前往下列官方網站下載 Windows 可執行版：
+
+👉 [FFmpeg Windows 版本（Essentials Build）](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip)
+
+下載後請：
+
+1. 解壓縮 zip 檔案
+2. 將 `bin` 資料夾的完整路徑（裡面包含 `ffmpeg.exe`）加入系統環境變數 Path
+3. 或者，將該路徑填入程式內的 `FFMPEG_PATH` 欄位（不改環境變數也能執行）
+
+> 若未正確安裝 ffmpeg，將無法將 MP4 的音訊與影像合併
+
+---
+
+## 🔍 執行時會自動檢查 ffmpeg 是否存在
+
+若使用者選擇 MP4 格式下載，系統會自動檢查 ffmpeg 是否存在：
+
+- 若未找到 ffmpeg，將顯示錯誤提示並中止下載
+- 使用者可透過環境變數或程式內硬編路徑處理
+
 
 ## 📦 使用技術
 

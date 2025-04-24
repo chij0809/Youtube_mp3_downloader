@@ -37,11 +37,6 @@
    - 選擇下載格式（MP3 或 MP4）
    - 若為 MP4 可選解析度（如 720p）
    - 選擇儲存路徑git add README.md
-git commit -m "更新根目錄下的 README.md 內容"
-git pull --rebase
-git push
-
-
    - 點擊「下載」開始執行
 
 ## 🖼️ 畫面預覽

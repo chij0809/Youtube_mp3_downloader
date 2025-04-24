@@ -48,7 +48,8 @@ git push
 
 > 主程式介面（YouTube 下載器 GUI）：
 
-![screenshot](screenshot.png)
+![screenshot](YT_downloader/screenshot.png)
+
 
 
 📄 License

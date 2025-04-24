@@ -69,6 +69,15 @@ When the user selects MP4 format, the system will automatically check whether `f
 🖼️ Interface Preview
 Main GUI (YouTube Downloader):
 ![screenshot](screenshot.png)
+
+---
+
+## 🎬 Demo Video
+
+A full walkthrough demonstrating how to use the YouTube MP3/MP4 downloader, including Git version control and ffmpeg setup:
+
+👉 [Watch on YouTube](https://youtu.be/Pww479_sxQk)
+
 📄 License
 This project is licensed under the MIT License.
 You are free to use, modify, and share for personal or educational purposes. Commercial piracy is strictly prohibited.

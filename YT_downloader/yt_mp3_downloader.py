@@ -4,6 +4,7 @@ import subprocess
 from pathlib import Path
 
 YTDLP_PATH = r"C:\Users\Jacky\AppData\Local\Programs\Python\Python313\Scripts\yt-dlp.exe"
+FFMPEG_PATH = r"D:\ffmpeg\ffmpeg-7.1.1-essentials_build\ffmpeg-7.1.1-essentials_build\bin\ffmpeg.exe"
 
 def download_video_or_audio():
     url = url_entry.get()
@@ -11,22 +12,18 @@ def download_video_or_audio():
         messagebox.showwarning("提示", "請輸入 YouTube 網址")
         return
 
-    # 選擇輸出檔案
-    ext = format_var.get()
-    file_path = filedialog.asksaveasfilename(
-        title="選擇儲存路徑與檔名",
-        defaultextension=f".{ext}",
-        filetypes=[("Audio/Video files", f"*.{ext}")]
-    )
-    if not file_path:
+    save_path = filedialog.askdirectory(title="選擇要下載的資料夾")
+    if not save_path:
         return
 
-    output_template = str(Path(file_path).with_suffix("")) + ".%(ext)s"
+    save_path = Path(save_path)
+    output_template = str(save_path / "%(title)s.%(ext)s")
 
     try:
         if format_var.get() == "mp3":
             command = [
                 YTDLP_PATH,
+                "--ffmpeg-location", FFMPEG_PATH,
                 "-f", "bestaudio",
                 "--extract-audio",
                 "--audio-format", "mp3",
@@ -38,6 +35,7 @@ def download_video_or_audio():
             video_format = f"bestvideo[height<={resolution}]+bestaudio"
             command = [
                 YTDLP_PATH,
+                "--ffmpeg-location", FFMPEG_PATH,
                 "-f", video_format,
                 "--merge-output-format", "mp4",
                 "-o", output_template,
@@ -47,13 +45,10 @@ def download_video_or_audio():
             messagebox.showerror("錯誤", "請選擇下載格式")
             return
 
-        result = subprocess.run(command, capture_output=True, text=True)
-
-        if result.returncode != 0:
-            messagebox.showerror("錯誤", f"下載失敗：\n{result.stderr}")
-        else:
-            messagebox.showinfo("成功", f"{format_var.get().upper()} 下載完成！")
-
+        subprocess.run(command, check=True)
+        messagebox.showinfo("成功", f"{format_var.get().upper()} 下載完成！")
+    except subprocess.CalledProcessError as e:
+        messagebox.showerror("錯誤", f"下載失敗：\n{e}")
     except Exception as e:
         messagebox.showerror("錯誤", f"發生錯誤：{e}")
 
@@ -79,3 +74,4 @@ resolution_menu.pack()
 tk.Button(app, text="下載", command=download_video_or_audio).pack(pady=20)
 
 app.mainloop()
+

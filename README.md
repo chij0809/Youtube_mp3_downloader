@@ -51,6 +51,7 @@ When the user selects MP4 format, the system will automatically check whether `f
 - ✅ MP4 video download with resolution options
 - ✅ Custom output folder and filename
 - ✅ Simple GUI interface (no terminal needed)
+- ✅ **Playlist download support** (downloads all videos in a playlist)
 
 ---
 
@@ -59,15 +60,19 @@ When the user selects MP4 format, the system will automatically check whether `f
 1. Install required Python packages:
    ```bash
    pip install yt-dlp
+   ```
 2. Run the main script:
+   ```bash
    python yt_mp3_downloader.py
+   ```
 3. Follow the steps in the GUI:
-   Paste a YouTube URL  
-   Select download format (MP3 or MP4)
-   If MP4, choose desired resolution (e.g., 720p)
-   Click Download to begin
-🖼️ Interface Preview
-Main GUI (YouTube Downloader):
+   - Paste a YouTube URL  
+   - Select download format (MP3 or MP4)
+   - If MP4, choose desired resolution (e.g., 720p)
+   - Click Download to begin
+
+🖼️ Interface Preview  
+Main GUI (YouTube Downloader):  
 ![screenshot](screenshot.png)
 
 ---
@@ -78,6 +83,8 @@ A full walkthrough demonstrating how to use the YouTube MP3/MP4 downloader, incl
 
 👉 [Watch on YouTube](https://youtu.be/Pww479_sxQk)
 
-📄 License
-This project is licensed under the MIT License.
+---
+
+📄 License  
+This project is licensed under the MIT License.  
 You are free to use, modify, and share for personal or educational purposes. Commercial piracy is strictly prohibited.

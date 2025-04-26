@@ -1,7 +1,7 @@
 # YouTube MP3/MP4 Downloader 🎵
 
 A simple and intuitive YouTube audio/video downloader built with Python, Tkinter, and yt-dlp.  
-Supports MP3 audio and MP4 video downloads with resolution selection and custom save paths.  
+Supports MP3 audio and MP4 video downloads with resolution selection, custom save paths, and playlist downloads.  
 Perfect for personal use or educational demonstration.
 
 ---
@@ -42,6 +42,7 @@ When the user selects MP4 format, the system will automatically check whether `f
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - `subprocess` to call yt-dlp
 - `pathlib` to manage file paths and filenames
+- `Pillow` for handling background images
 
 ---
 
@@ -49,9 +50,11 @@ When the user selects MP4 format, the system will automatically check whether `f
 
 - ✅ MP3 audio download support
 - ✅ MP4 video download with resolution options
+- ✅ Playlist download support (downloads all videos in a playlist)
 - ✅ Custom output folder and filename
 - ✅ Simple GUI interface (no terminal needed)
-- ✅ **Playlist download support** (downloads all videos in a playlist)
+- ✅ Background image for enhanced visual appeal
+- ✅ Progress bar to indicate download status
 
 ---
 
@@ -59,7 +62,7 @@ When the user selects MP4 format, the system will automatically check whether `f
 
 1. Install required Python packages:
    ```bash
-   pip install yt-dlp
+   pip install yt-dlp Pillow
    ```
 2. Run the main script:
    ```bash
@@ -69,6 +72,7 @@ When the user selects MP4 format, the system will automatically check whether `f
    - Paste a YouTube URL  
    - Select download format (MP3 or MP4)
    - If MP4, choose desired resolution (e.g., 720p)
+   - If downloading a playlist, paste the playlist URL
    - Click Download to begin
 
 🖼️ Interface Preview  
@@ -82,8 +86,6 @@ Main GUI (YouTube Downloader):
 A full walkthrough demonstrating how to use the YouTube MP3/MP4 downloader, including Git version control and ffmpeg setup:
 
 👉 [Watch on YouTube](https://youtu.be/Pww479_sxQk)
-
----
 
 📄 License  
 This project is licensed under the MIT License.  
